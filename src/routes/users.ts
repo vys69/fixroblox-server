@@ -35,7 +35,7 @@ router.get('/:userId/profile', async (req, res) => {
 
     const metaTags = createMetaTags({
       title: `${userData.displayName} (@${userData.name})`,
-      description: statsText,
+      description: decodeURIComponent(statsText),
       image: avatarUrl,
       url: profileUrl
     });
