@@ -4,7 +4,7 @@ import groupRoutes from './groups';
 import catalogRoutes from './catalog';
 import bundleRoutes from './bundles';
 import gameRoutes from './games';
-import oembedRoutes from './oembed';
+// import oembedRoutes from './oembed';
 
 const router = Router();
 
@@ -23,6 +23,6 @@ router.use('/groups', groupRoutes);
 router.use('/catalog', catalogRoutes);
 router.use('/bundles', bundleRoutes);
 router.use('/games', gameRoutes);
-router.use('/oembed', oembedRoutes);
+// router.use('/oembed', oembedRoutes);
 
 export default router;
