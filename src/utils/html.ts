@@ -7,14 +7,17 @@ export function createRedirectHtml({
 }: RedirectHtmlProps): string {
   return `
     <!DOCTYPE html>
-    <html>
+    <html lang="en">
       <head>
-        <title>${title}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${title} - Roblox</title>
         ${metaTags}
-        <meta http-equiv="refresh" content="0;url=${redirectUrl}" />
       </head>
       <body>
-        Redirecting to ${redirectUrl}...
+        <script>
+          window.location.href = "${redirectUrl}";
+        </script>
       </body>
     </html>
   `;

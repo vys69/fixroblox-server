@@ -24,23 +24,24 @@ router.get('/:userId/profile', async (req, res) => {
     ]);
 
     // Format stats
+    const createdYear = new Date(userData.created).getFullYear();
     const formattedValue = new Intl.NumberFormat('en-US').format(rolimonData.value);
     const robuxValue = `R${formattedValue}`;
     const formattedFriends = new Intl.NumberFormat('en-US').format(friendsData.count);
     const formattedFollowers = new Intl.NumberFormat('en-US').format(followersData.count);
-    const statsText = `${formattedFriends} friends, ${formattedFollowers} followers, ${robuxValue} robux`;
+    const statsText = encodeURIComponent(`👤 ${formattedFriends}   👥 ${formattedFollowers}   💰 ${robuxValue}   📅 ${createdYear}`);
 
     const profileUrl = `https://www.roblox.com/users/${userId}/profile`;
 
     const metaTags = createMetaTags({
-      title: `${userData.name}'s Roblox Profile`,
+      title: `${userData.displayName} (@${userData.name})`,
       description: statsText,
       image: avatarUrl,
       url: profileUrl
     });
 
     const redirectHtml = createRedirectHtml({
-      title: `${userData.name}'s Profile - FixRoblox`,
+      title: `${userData.displayName} (@${userData.name})`,
       metaTags,
       redirectUrl: profileUrl
     });

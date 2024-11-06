@@ -121,8 +121,7 @@ export interface RobloxUser {
     description: string;
     image: string;
     url: string;
-    type?: 'summary' | 'summary_large_image';
-    siteName?: string;
+    oembedTag?: string;
   }
   
   export interface RedirectHtmlProps {

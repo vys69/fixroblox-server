@@ -16,7 +16,7 @@ router.get('/:gameId/:gameName?', async (req, res) => {
       description: gameData.description || 'No description available',
       image: gameData.thumbnailUrl || '',
       url: `https://www.roblox.com/games/${gameId}`,
-      type: 'summary_large_image'
+      // type: 'summary_large_image'
     });
 
     const html = createRedirectHtml({

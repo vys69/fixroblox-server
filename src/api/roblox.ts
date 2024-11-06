@@ -195,7 +195,7 @@ export async function fetchRobloxGameData(gameId: string): Promise<RobloxGame> {
   }
 }
 
-async function fetchGameThumbnail(gameId: string): Promise<string> {
+export async function fetchGameThumbnail(gameId: string): Promise<string> {
   try {
     const response = await robloxApi.get(`https://www.roblox.com/item-thumbnails?params=[{assetId:${gameId}}]`);
     if (response.data[0]?.thumbnailUrl) {
